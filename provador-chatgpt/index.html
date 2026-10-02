@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>5 prompts para o provador do ChatGPT · ezAI</title>
+<link rel="icon" href="../ezai.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7F9;--card:#FFFFFF;--ink:#1A1A1A;--soft:#5F6670;--line:#E4E7EC;--code:#F2F4F7;--blue:#0A5CFF;--btn-ink:#FFFFFF}
+@media (prefers-color-scheme:dark){:root{--bg:#0F1115;--card:#171A20;--ink:#ECEEF2;--soft:#9AA1AD;--line:#262A33;--code:#12151A;--blue:#3D7BFF}}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 Inter,system-ui,sans-serif;padding:32px 16px 48px}
+main{max-width:720px;margin:0 auto}
+header{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+header img{width:40px;height:40px;border-radius:10px}
+header span{font:700 18px 'Space Grotesk',sans-serif}
+header b{color:var(--blue)}
+h1{font:700 clamp(26px,6vw,36px)/1.15 'Space Grotesk',sans-serif;letter-spacing:-.02em;margin-bottom:12px}
+.lead{color:var(--soft);margin-bottom:24px}
+ol{color:var(--soft);padding-left:20px;margin-bottom:28px}
+ol li{margin-bottom:4px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-bottom:14px}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:12px 12px 12px 18px;border-bottom:1px solid var(--line)}
+.bar small{color:var(--soft);font-weight:500}
+button{font:600 15px Inter,sans-serif;background:var(--blue);color:var(--btn-ink);border:0;border-radius:10px;padding:10px 18px;cursor:pointer;transition:transform .1s}
+button:active{transform:scale(.97)}
+p.prompt{background:var(--code);margin:0;padding:18px;font:400 15px/1.6 ui-monospace,Menlo,Consolas,monospace}
+.note{margin-top:20px;color:var(--soft);font-size:14px}
+footer{margin-top:32px;text-align:center;color:var(--soft);font-size:14px}
+footer a{color:var(--blue);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<main>
+  <header><img src="../ezai.png" alt="ezAI"><span>Arthur · ez<b>AI</b></span></header>
+  <h1>5 prompts para o provador virtual do ChatGPT</h1>
+  <p class="lead">Use com o recurso Try on, que mostra a roupa em você a partir de uma selfie.</p>
+  <ol>
+    <li>Toque em <strong>Copiar</strong> no prompt que quiser.</li>
+    <li>Cole no ChatGPT. Troque o valor e a peça pelo que você procura.</li>
+    <li>Quando aparecerem os produtos, toque em <strong>Try on</strong> e envie uma selfie e uma foto de corpo inteiro.</li>
+  </ol>
+  <div class="card"><div class="bar"><small>1 · Jaquetas</small><button class="copy">Copiar</button></div>
+    <p class="prompt">Encontre 3 jaquetas até R$ 300 que combinem com o que já tenho e me deixe provar as melhores.</p></div>
+  <div class="card"><div class="bar"><small>2 · Trabalho</small><button class="copy">Copiar</button></div>
+    <p class="prompt">Monte 3 looks para uma sexta casual no trabalho e mostre cada um em mim.</p></div>
+  <div class="card"><div class="bar"><small>3 · Novo estilo</small><button class="copy">Copiar</button></div>
+    <p class="prompt">Quero mudar de estilo gastando pouco. Sugira 3 estilos e me deixe provar um look de cada.</p></div>
+  <div class="card"><div class="bar"><small>4 · Cor nova</small><button class="copy">Copiar</button></div>
+    <p class="prompt">Encontre camisas em uma cor que eu não costumo usar e me deixe provar para comparar.</p></div>
+  <div class="card"><div class="bar"><small>5 · Evento</small><button class="copy">Copiar</button></div>
+    <p class="prompt">Tenho um evento importante. Encontre um look arrumado, sem ser formal demais, e me deixe provar.</p></div>
+  <p class="note">A imagem mostra o estilo, não o tamanho: confira a tabela de medidas, a política de troca e quem é o vendedor antes de comprar. Sua foto fica salva; para apagar: Configurações › Personalização.</p>
+  <footer>Mais dicas de IA sem complicação no <a href="https://instagram.com/bps.ezai">@bps.ezai</a></footer>
+</main>
+<script>
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  const p=b.closest('.card').querySelector('.prompt'),t=p.innerText,o=b.textContent;
+  try{await navigator.clipboard.writeText(t)}catch(e){const r=document.createRange();r.selectNodeContents(p);const s=getSelection();s.removeAllRanges();s.addRange(r);document.execCommand('copy')}
+  b.textContent='Copiado ✓';setTimeout(()=>b.textContent=o,1800);
+}));
+</script>
+</body>
+</html>
